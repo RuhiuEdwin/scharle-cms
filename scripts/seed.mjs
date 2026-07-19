@@ -104,11 +104,11 @@ async function main() {
     heroEyebrow: "Nyeri Town · Est. Beauty & Barbering Studio",
     heroHeadline: "Learn it. Live it. Glow it.",
     heroSubcopy:
-      "Hands-on training in hair, skin, nails, makeup, and barbering — taught by people who still do the work, in a studio built for real practice, not just theory.",
+      "Hands-on training in hair, skin, nails, makeup, and barbering, taught by people who still do the work, in a studio built for real practice, not just theory.",
     heroMedia: [img.hero],
-    seoTitle: "Scharle Beauty College — Learn It. Live It. Glow It.",
+    seoTitle: "Scharle Beauty College | Learn It. Live It. Glow It.",
     seoDescription:
-      "Hands-on training in hair, skin, nails, makeup, and barbering at Scharle Beauty College — Nyeri Town's realest beauty school. Apply or book a visit today.",
+      "Hands-on training in hair, skin, nails, makeup, and barbering at Scharle Beauty College: Nyeri Town's realest beauty school. Apply or book a visit today.",
   });
 
   console.log("\nSeeding About Page…");
@@ -116,7 +116,7 @@ async function main() {
     whoWeAre: {
       image: img.about,
       heading: "Nyeri's Studio for Real Beauty Careers",
-      body: "Scharle trains hairdressers, therapists, makeup artists, nail techs, and barbers in a working studio, not a lecture hall — every skill is practiced on real clients before you graduate.",
+      body: "Scharle trains hairdressers, therapists, makeup artists, nail techs, and barbers in a working studio, not a lecture hall; every skill is practiced on real clients before you graduate.",
     },
     mission: {
       heading: "Train Real Skills, Build Real Confidence",
@@ -124,9 +124,9 @@ async function main() {
     },
     vision: {
       heading: "The School the Industry Hires From",
-      body: "To be Nyeri's — and eventually Kenya's — first call when a salon, spa, or studio needs someone who already knows the chair.",
+      body: "To be Nyeri's, and eventually Kenya's, first call when a salon, spa, or studio needs someone who already knows the chair.",
     },
-    seoTitle: "About Scharle Beauty College — Nyeri's Studio for Real Beauty Careers",
+    seoTitle: "About Scharle Beauty College | Nyeri's Studio for Real Beauty Careers",
     seoDescription:
       "Who Scharle Beauty College is, our mission and vision, and what student life looks like at our Nyeri Town studio.",
   });
@@ -136,7 +136,7 @@ async function main() {
     introHeading: "Six Paths. One Studio.",
     introBody:
       "Every program runs on the same principle: real technique, real clients, real portfolio. Tap a program to see duration, intakes, and what you'll actually learn.",
-    seoTitle: "Courses — Scharle Beauty College",
+    seoTitle: "Courses | Scharle Beauty College",
     seoDescription:
       "Six hands-on programs at Scharle Beauty College: Hairdressing & Styling, Beauty Therapy, Cosmetology, Makeup Artistry, Nail Technology, and Barbering.",
   });
@@ -156,7 +156,7 @@ async function main() {
     ],
     activeIntakeMonths: "January",
     registrationFeeNote: "Contact the studio for current registration fee amount",
-    seoTitle: "Admissions — Scharle Beauty College",
+    seoTitle: "Admissions | Scharle Beauty College",
     seoDescription:
       "How to join Scharle Beauty College: requirements, intakes, and booking a school visit in Nyeri Town.",
   });
@@ -172,16 +172,16 @@ async function main() {
       { platform: "TikTok", url: "#" },
       { platform: "Facebook", url: "#" },
     ],
-    seoTitle: "Contact — Scharle Beauty College",
+    seoTitle: "Contact | Scharle Beauty College",
     seoDescription:
-      "Get in touch with Scharle Beauty College — phone, email, and our Outspan Plaza, Nyeri Town location.",
+      "Get in touch with Scharle Beauty College: phone, email, and our Outspan Plaza, Nyeri Town location.",
   });
 
   console.log("\nSeeding Gallery Page…");
   await setSingleType("gallery-page", {
     introHeading: "The Studio, in Motion",
-    seoTitle: "Gallery — Scharle Beauty College",
-    seoDescription: "The Scharle Beauty College studio and student work — Nyeri Town.",
+    seoTitle: "Gallery | Scharle Beauty College",
+    seoDescription: "The Scharle Beauty College studio and student work, Nyeri Town.",
   });
 
   console.log("\nSeeding Courses…");
@@ -201,7 +201,7 @@ async function main() {
       name: "Beauty Therapy",
       duration: "6 months",
       intakeMonths: "January",
-      overview: "Skincare, facials, waxing, and spa treatments — hands-on from week one.",
+      overview: "Skincare, facials, waxing, and spa treatments, hands-on from week one.",
       whatYoullLearn: ["Facials & skin analysis", "Waxing & hair removal", "Body treatments & massage basics", "Spa hygiene & client care"],
       careerOutcomes: ["Spa therapist", "Skincare specialist", "Beauty salon technician", "Mobile beauty therapist"],
       heroImage: img.beautyTherapy,
@@ -223,7 +223,7 @@ async function main() {
       name: "Makeup Artistry",
       duration: "4 months",
       intakeMonths: "January",
-      overview: "Bridal, editorial, and everyday makeup — plus how to build a client book.",
+      overview: "Bridal, editorial, and everyday makeup, plus how to build a client book.",
       whatYoullLearn: ["Bridal & editorial makeup", "Everyday & special-occasion looks", "Building a client book"],
       careerOutcomes: ["Freelance makeup artist", "Bridal MUA", "Studio/photoshoot MUA", "Brand/counter makeup artist"],
       heroImage: img.makeup,
@@ -275,9 +275,9 @@ async function main() {
 
   console.log("\nSeeding Why Scharle Highlights…");
   const why = [
-    { title: "Industry Pros on the Floor", body: "Not just lecturers — working stylists and therapists teach every module.", image: img.barbering, order: 1 },
+    { title: "Industry Pros on the Floor", body: "Not just lecturers: working stylists and therapists teach every module.", image: img.barbering, order: 1 },
     { title: "Real Chairs, Real Clients", body: "You're practicing on real people from term one, not mannequins all year.", image: img.hairdressing, order: 2 },
-    { title: "Portfolio From Day One", body: "Every project is shot and logged — you graduate with content, not just a certificate.", image: img.contentDay, order: 3 },
+    { title: "Portfolio From Day One", body: "Every project is shot and logged; you graduate with content, not just a certificate.", image: img.contentDay, order: 3 },
   ];
   for (const w of why) {
     await createEntry("why-scharle-highlights", { ...w, publishedAt: new Date().toISOString() });
