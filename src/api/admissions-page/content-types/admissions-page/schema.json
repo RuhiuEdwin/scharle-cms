@@ -1,0 +1,41 @@
+{
+  "kind": "singleType",
+  "collectionName": "admissions_page",
+  "info": {
+    "singularName": "admissions-page",
+    "pluralName": "admissions-pages",
+    "displayName": "Admissions Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "howToJoinSteps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.step"
+    },
+    "requirementsChecklist": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.checklist-item"
+    },
+    "activeIntakeMonths": {
+      "type": "enumeration",
+      "enum": [
+        "January",
+        "May",
+        "September"
+      ]
+    },
+    "registrationFeeNote": {
+      "type": "string"
+    },
+    "seoTitle": {
+      "type": "string"
+    },
+    "seoDescription": {
+      "type": "text"
+    }
+  }
+}

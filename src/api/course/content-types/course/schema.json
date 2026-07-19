@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "courses",
+  "info": {
+    "singularName": "course",
+    "pluralName": "courses",
+    "displayName": "Course"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "duration": {
+      "type": "string",
+      "required": true
+    },
+    "intakeMonths": {
+      "type": "enumeration",
+      "enum": [
+        "January",
+        "May",
+        "September"
+      ],
+      "enumName": "IntakeMonth"
+    },
+    "overview": {
+      "type": "richtext",
+      "required": true
+    },
+    "whatYoullLearn": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.list-item"
+    },
+    "careerOutcomes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.list-item"
+    },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "heroVideo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "videos"
+      ]
+    },
+    "featuredOnHome": {
+      "type": "boolean",
+      "default": false
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

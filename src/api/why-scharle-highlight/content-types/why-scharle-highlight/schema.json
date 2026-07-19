@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "why_scharle_highlights",
+  "info": {
+    "singularName": "why-scharle-highlight",
+    "pluralName": "why-scharle-highlights",
+    "displayName": "Why Scharle Highlight"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

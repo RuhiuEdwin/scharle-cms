@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "booking_requests",
+  "info": {
+    "singularName": "booking-request",
+    "pluralName": "booking-requests",
+    "displayName": "Booking Request"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "courseInterest": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::course.course"
+    },
+    "preferredDate": {
+      "type": "date"
+    },
+    "honeypot": {
+      "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "new",
+        "contacted",
+        "archived"
+      ],
+      "default": "new"
+    },
+    "submittedAt": {
+      "type": "datetime"
+    }
+  }
+}

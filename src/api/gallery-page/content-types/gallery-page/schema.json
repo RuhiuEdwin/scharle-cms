@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "gallery_page",
+  "info": {
+    "singularName": "gallery-page",
+    "pluralName": "gallery-pages",
+    "displayName": "Gallery Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "introHeading": {
+      "type": "string"
+    },
+    "seoTitle": {
+      "type": "string"
+    },
+    "seoDescription": {
+      "type": "text"
+    }
+  }
+}

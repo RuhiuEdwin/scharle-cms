@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "student_life_highlights",
+  "info": {
+    "singularName": "student-life-highlight",
+    "pluralName": "student-life-highlights",
+    "displayName": "Student Life Highlight / Testimonial"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ],
+      "required": true
+    },
+    "caption": {
+      "type": "string"
+    },
+    "quote": {
+      "type": "text"
+    },
+    "attribution": {
+      "type": "string"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

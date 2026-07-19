@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "courses_page",
+  "info": {
+    "singularName": "courses-page",
+    "pluralName": "courses-pages",
+    "displayName": "Courses Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "introHeading": {
+      "type": "string"
+    },
+    "introBody": {
+      "type": "text"
+    },
+    "seoTitle": {
+      "type": "string"
+    },
+    "seoDescription": {
+      "type": "text"
+    }
+  }
+}
