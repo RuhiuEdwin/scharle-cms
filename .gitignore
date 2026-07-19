@@ -129,3 +129,13 @@ dist
 build
 .strapi-updater.json
 .strapi-cloud.json
+
+############################
+# Planning/coordination docs
+# (live at the project root, not in this repo)
+############################
+
+/PROJECT.md
+/design/
+/qa/
+/content/COPY.md
