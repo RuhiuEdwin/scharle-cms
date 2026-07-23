@@ -5,7 +5,7 @@
 // Requires STRAPI_BACKEND_FULLACCESS_TOKEN in the environment (via
 // `doppler run -- node scripts/seed.mjs`).
 
-const BASE = "http://localhost:1337";
+const BASE = process.env.STRAPI_BASE_URL ?? "http://localhost:1337";
 const TOKEN = process.env.STRAPI_BACKEND_FULLACCESS_TOKEN;
 
 if (!TOKEN) {
