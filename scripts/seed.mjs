@@ -67,7 +67,7 @@ async function setSingleType(uid, data) {
 }
 
 async function createEntry(uid, data) {
-  await api(`/api/${uid}`, { method: "POST", body: JSON.stringify({ data }) });
+  return api(`/api/${uid}`, { method: "POST", body: JSON.stringify({ data }) });
 }
 
 async function main() {
@@ -90,13 +90,15 @@ async function main() {
     name: "Scharle Beauty College",
     tagline: "Learn It. Live It. Glow It.",
     phone: "0712 345 678",
-    email: "hello@scharlebeauty.ke",
+    email: "hello@scharlebeauty.com",
     address: "Outspan Plaza, Nyeri Town",
     socialLinks: [
       { platform: "Instagram", url: "#" },
       { platform: "TikTok", url: "#" },
       { platform: "Facebook", url: "#" },
+      { platform: "WhatsApp", url: "https://wa.me/254712345678" },
     ],
+    calendlyUrl: "https://calendly.com/scharlebeauty/discovery-call",
   });
 
   console.log("\nSeeding Home Page…");
@@ -164,13 +166,14 @@ async function main() {
   console.log("\nSeeding Contact Page…");
   await setSingleType("contact-page", {
     phone: "0712 345 678",
-    email: "hello@scharlebeauty.ke",
+    email: "hello@scharlebeauty.com",
     address: "Outspan Plaza, Nyeri Town",
     mapEmbedUrl: "",
     socialLinks: [
       { platform: "Instagram", url: "#" },
       { platform: "TikTok", url: "#" },
       { platform: "Facebook", url: "#" },
+      { platform: "WhatsApp", url: "https://wa.me/254712345678" },
     ],
     seoTitle: "Contact | Scharle Beauty College",
     seoDescription:
@@ -189,87 +192,133 @@ async function main() {
     {
       name: "Hairdressing & Styling",
       duration: "6 months",
-      intakeMonths: "January",
+      fee: "KES 60,000 total programme fee",
+      intakeMonths: ["January", "May", "September"],
       overview: "Cutting, coloring, braiding, and styling for every hair type and occasion.",
       whatYoullLearn: ["Cutting & styling fundamentals", "Chemical treatments & coloring", "Braiding & weaving techniques", "Client consultation & retail"],
       careerOutcomes: ["Salon stylist", "Session hairdresser", "Session assistant", "Freelance/mobile stylist"],
       heroImage: img.hairdressing,
       featuredOnHome: true,
       order: 1,
+      instructors: [{ name: "Grace Mwangi", role: "Lead Hairdressing Instructor" }],
+      faqs: [
+        { question: "Do I need prior experience?", answer: "No — this course starts from the fundamentals and builds up to advanced technique." },
+        { question: "Do I get certified?", answer: "Yes, you receive a Scharle Beauty College certificate on successful completion." },
+        { question: "Is training hands-on?", answer: "Yes — you're practicing on real clients from term one, not just mannequins." },
+      ],
     },
     {
       name: "Beauty Therapy",
       duration: "6 months",
-      intakeMonths: "January",
+      fee: "KES 60,000 total programme fee",
+      intakeMonths: ["January", "May", "September"],
       overview: "Skincare, facials, waxing, and spa treatments, hands-on from week one.",
       whatYoullLearn: ["Facials & skin analysis", "Waxing & hair removal", "Body treatments & massage basics", "Spa hygiene & client care"],
       careerOutcomes: ["Spa therapist", "Skincare specialist", "Beauty salon technician", "Mobile beauty therapist"],
       heroImage: img.beautyTherapy,
       featuredOnHome: false,
       order: 2,
+      instructors: [{ name: "Faith Wanjiru", role: "Beauty Therapy Instructor" }],
+      faqs: [
+        { question: "Is this course physically demanding?", answer: "It involves standing and hands-on practice, but no more than a typical spa/salon shift." },
+        { question: "What equipment do I need?", answer: "Core tools are provided in the studio; a personal kit list is shared at enrollment." },
+      ],
     },
     {
       name: "Cosmetology",
       duration: "9 months",
-      intakeMonths: "January",
+      fee: "KES 85,000 total programme fee",
+      intakeMonths: ["January", "September"],
       overview: "Full-spectrum hair and skin care, plus salon management basics.",
       whatYoullLearn: ["Full-spectrum hair & skin care", "Product chemistry basics", "Salon management fundamentals"],
       careerOutcomes: ["All-round salon cosmetologist", "Salon supervisor/manager track", "Product consultant"],
       heroImage: img.cosmetology,
       featuredOnHome: false,
       order: 3,
+      instructors: [{ name: "Esther Njoki", role: "Cosmetology Program Lead" }],
+      faqs: [
+        { question: "Why is this course longer than the others?", answer: "It covers both hair and skin disciplines plus salon management, so it runs a full 9 months." },
+        { question: "Can I specialize after graduating?", answer: "Yes — cosmetology graduates often go on to focus on one area (hair, skin, or management) on the job." },
+      ],
     },
     {
       name: "Makeup Artistry",
       duration: "4 months",
-      intakeMonths: "January",
+      fee: "KES 45,000 total programme fee",
+      intakeMonths: ["January", "May", "September"],
       overview: "Bridal, editorial, and everyday makeup, plus how to build a client book.",
       whatYoullLearn: ["Bridal & editorial makeup", "Everyday & special-occasion looks", "Building a client book"],
       careerOutcomes: ["Freelance makeup artist", "Bridal MUA", "Studio/photoshoot MUA", "Brand/counter makeup artist"],
       heroImage: img.makeup,
       featuredOnHome: true,
       order: 4,
+      instructors: [{ name: "Diana Achieng", role: "Makeup Artistry Instructor" }],
+      faqs: [
+        { question: "Do I need to buy my own makeup kit?", answer: "A starter kit list is provided; studio kits are available for practice sessions." },
+        { question: "Is this good for freelancing?", answer: "Yes — building a client-ready portfolio and a client book is part of the curriculum." },
+      ],
     },
     {
       name: "Nail Technology",
       duration: "3 months",
-      intakeMonths: "January",
+      fee: "KES 35,000 total programme fee",
+      intakeMonths: ["January", "May", "September"],
       overview: "Manicure, pedicure, gel, and nail art techniques clients actually ask for.",
       whatYoullLearn: ["Manicure & pedicure technique", "Gel, acrylic & nail art", "Hygiene & tool care"],
       careerOutcomes: ["Nail technician", "Nail bar specialist", "Freelance/mobile nail tech"],
       heroImage: img.nails,
       featuredOnHome: true,
       order: 5,
+      instructors: [{ name: "Purity Kamau", role: "Nail Technology Instructor" }],
+      faqs: [
+        { question: "Is this the shortest course?", answer: "Yes, at 3 months it's our fastest path to a client-ready skill set." },
+        { question: "Do you teach nail art?", answer: "Yes — gel, acrylic, and nail art technique are all covered." },
+      ],
     },
     {
       name: "Barbering",
       duration: "4 months",
-      intakeMonths: "January",
+      fee: "KES 45,000 total programme fee",
+      intakeMonths: ["January", "May", "September"],
       overview: "Fades, line-ups, beard work, and running a barbershop chair.",
       whatYoullLearn: ["Fades, line-ups & classic cuts", "Beard shaping & razor work", "Barbershop client flow"],
       careerOutcomes: ["Barber", "Barbershop chair rental operator", "Session barber"],
       heroImage: img.barbering,
       featuredOnHome: false,
       order: 6,
+      instructors: [{ name: "Brian Otieno", role: "Lead Barbering Instructor" }],
+      faqs: [
+        { question: "Do you teach razor work?", answer: "Yes — beard shaping and razor work are part of the core curriculum." },
+        { question: "Can I rent a chair after graduating?", answer: "Many graduates go on to barbershop chair-rental or session work — it's one of our listed career outcomes." },
+      ],
     },
   ];
 
-  const slugify = (s) => s.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+  // No "and" substitution for "&" — must match the slugs already baked into
+  // routes/links across the frontend (e.g. "hairdressing-styling", not
+  // "hairdressing-and-styling").
+  const slugify = (s) => s.toLowerCase().replace(/&/g, "").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
+  const courseDocIdBySlug = {};
   for (const c of courses) {
-    await createEntry("courses", {
+    const slug = slugify(c.name);
+    const created = await createEntry("courses", {
       name: c.name,
-      slug: slugify(c.name),
+      slug,
       duration: c.duration,
-      intakeMonths: c.intakeMonths,
+      fee: c.fee,
+      intakeMonths: c.intakeMonths.map((text) => ({ text })),
       overview: c.overview,
       whatYoullLearn: c.whatYoullLearn.map((text) => ({ text })),
       careerOutcomes: c.careerOutcomes.map((text) => ({ text })),
       heroImage: c.heroImage,
       featuredOnHome: c.featuredOnHome,
       order: c.order,
+      instructors: c.instructors,
+      faqs: c.faqs,
       publishedAt: new Date().toISOString(),
     });
+    courseDocIdBySlug[slug] = created.data.documentId;
     console.log(`✓ course: ${c.name}`);
   }
 
@@ -295,6 +344,7 @@ async function main() {
       image: img.barbering,
       quote: "I walked in knowing nothing about barbering. Six months later I'm doing fades for actual paying clients.",
       attribution: "Brian, Barbering",
+      courseSlug: "barbering",
       order: 5,
     },
     {
@@ -302,6 +352,7 @@ async function main() {
       image: img.beautyTherapy,
       quote: "The instructors still work in real salons. They teach what's actually happening in the industry right now.",
       attribution: "Faith, Beauty Therapy",
+      courseSlug: "beauty-therapy",
       order: 6,
     },
     {
@@ -309,6 +360,7 @@ async function main() {
       image: img.makeup,
       quote: "Every project got shot for my portfolio. I had real content to post before I even graduated.",
       attribution: "Diana, Makeup Artistry",
+      courseSlug: "makeup-artistry",
       order: 7,
     },
     {
@@ -316,29 +368,72 @@ async function main() {
       image: img.nails,
       quote: "Booked my first bridal client while still a student here. That doesn't happen at just any school.",
       attribution: "Purity, Nail Technology",
+      courseSlug: "nail-technology",
       order: 8,
     },
   ];
   for (const s of studentLife) {
-    await createEntry("student-life-highlights", { ...s, publishedAt: new Date().toISOString() });
+    const { courseSlug, ...rest } = s;
+    await createEntry("student-life-highlights", {
+      ...rest,
+      course: courseSlug ? courseDocIdBySlug[courseSlug] : undefined,
+      publishedAt: new Date().toISOString(),
+    });
     console.log(`✓ student-life-highlight: ${s.caption}`);
   }
 
   console.log("\nSeeding Gallery Items…");
   const gallery = [
     { caption: "Studio Floor", category: "Studio", image: img.about, order: 1 },
-    { caption: "Color Bar", category: "Studio", image: img.cosmetology, order: 2 },
-    { caption: "Styling Stations", category: "Studio", image: img.hairdressing, order: 3 },
-    { caption: "Nail Bar", category: "Studio", image: img.nails, order: 4 },
+    { caption: "Color Bar", category: "Studio", image: img.cosmetology, order: 2, courseSlug: "cosmetology" },
+    { caption: "Styling Stations", category: "Studio", image: img.hairdressing, order: 3, courseSlug: "hairdressing-styling" },
+    { caption: "Nail Bar", category: "Studio", image: img.nails, order: 4, courseSlug: "nail-technology" },
     { caption: "Grad Shoot", category: "Students", image: img.gradShoot, order: 5 },
-    { caption: "Practice Day", category: "Students", image: img.beautyTherapy, order: 6 },
+    { caption: "Practice Day", category: "Students", image: img.beautyTherapy, order: 6, courseSlug: "beauty-therapy" },
     { caption: "Content Day", category: "Students", image: img.contentDay, order: 7 },
-    { caption: "Barbering Practical", category: "Students", image: img.barbering, order: 8 },
+    { caption: "Barbering Practical", category: "Students", image: img.barbering, order: 8, courseSlug: "barbering" },
   ];
   for (const g of gallery) {
-    await createEntry("gallery-items", { ...g, showOnAbout: g.category === "Students", publishedAt: new Date().toISOString() });
+    const { courseSlug, ...rest } = g;
+    await createEntry("gallery-items", {
+      ...rest,
+      showOnAbout: g.category === "Students",
+      course: courseSlug ? courseDocIdBySlug[courseSlug] : undefined,
+      publishedAt: new Date().toISOString(),
+    });
     console.log(`✓ gallery-item: ${g.caption}`);
   }
+
+  console.log("\nSeeding Payment Info…");
+  await setSingleType("payment-info", {
+    sectionTitle: "Fees & Payment Options",
+    introNote:
+      "Pay registration and tuition through either channel below. Bring your receipt/M-Pesa message with you on visit or intake day.",
+    registrationFee: "KES 5,000",
+    tuitionNote:
+      "From KES 45,000 per term, course-dependent — confirmed exactly during your visit or application review.",
+    channels: [
+      {
+        label: "Bank Transfer",
+        lines: [
+          { text: "Equity Bank Kenya" },
+          { text: "Acc. Name: Scharle Beauty College Ltd" },
+          { text: "Acc. No: 0000000000000" },
+          { text: "Branch: Nyeri" },
+        ],
+      },
+      {
+        label: "M-Pesa Paybill",
+        lines: [
+          { text: "Paybill No: 000000" },
+          { text: "Account No: Your full name" },
+          { text: "Confirm SMS before your visit" },
+        ],
+      },
+    ],
+    disclaimer:
+      "All figures and account details above are placeholders pending final confirmation from the college — do not send payment against them yet.",
+  });
 
   console.log("\n✅ Seed complete.");
 }

@@ -9,9 +9,13 @@
     "platform": {
       "type": "enumeration",
       "enum": [
+        "Facebook",
         "Instagram",
         "TikTok",
-        "Facebook"
+        "WhatsApp",
+        "X",
+        "YouTube",
+        "LinkedIn"
       ],
       "required": true
     },

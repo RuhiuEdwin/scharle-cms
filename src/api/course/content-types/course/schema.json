@@ -23,14 +23,13 @@
       "type": "string",
       "required": true
     },
+    "fee": {
+      "type": "string"
+    },
     "intakeMonths": {
-      "type": "enumeration",
-      "enum": [
-        "January",
-        "May",
-        "September"
-      ],
-      "enumName": "IntakeMonth"
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.list-item"
     },
     "overview": {
       "type": "richtext",
@@ -53,13 +52,6 @@
         "images"
       ]
     },
-    "heroVideo": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "videos"
-      ]
-    },
     "featuredOnHome": {
       "type": "boolean",
       "default": false
@@ -67,6 +59,16 @@
     "order": {
       "type": "integer",
       "default": 0
+    },
+    "instructors": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.instructor"
+    },
+    "faqs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.faq"
     }
   }
 }

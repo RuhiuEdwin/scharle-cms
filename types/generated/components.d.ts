@@ -11,6 +11,18 @@ export interface SharedChecklistItem extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedFaq extends Struct.ComponentSchema {
+  collectionName: 'components_shared_faqs';
+  info: {
+    displayName: 'FAQ';
+    icon: 'question';
+  };
+  attributes: {
+    answer: Schema.Attribute.Text & Schema.Attribute.Required;
+    question: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedImageTextBlock extends Struct.ComponentSchema {
   collectionName: 'components_shared_image_text_blocks';
   info: {
@@ -24,6 +36,18 @@ export interface SharedImageTextBlock extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedInstructor extends Struct.ComponentSchema {
+  collectionName: 'components_shared_instructors';
+  info: {
+    displayName: 'Instructor';
+    icon: 'user';
+  };
+  attributes: {
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    role: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedListItem extends Struct.ComponentSchema {
   collectionName: 'components_shared_list_items';
   info: {
@@ -32,6 +56,18 @@ export interface SharedListItem extends Struct.ComponentSchema {
   };
   attributes: {
     text: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedPaymentChannel extends Struct.ComponentSchema {
+  collectionName: 'components_shared_payment_channels';
+  info: {
+    displayName: 'Payment Channel';
+    icon: 'money';
+  };
+  attributes: {
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    lines: Schema.Attribute.Component<'shared.list-item', true>;
   };
 }
 
@@ -55,7 +91,15 @@ export interface SharedSocialLink extends Struct.ComponentSchema {
   };
   attributes: {
     platform: Schema.Attribute.Enumeration<
-      ['Instagram', 'TikTok', 'Facebook']
+      [
+        'Facebook',
+        'Instagram',
+        'TikTok',
+        'WhatsApp',
+        'X',
+        'YouTube',
+        'LinkedIn',
+      ]
     > &
       Schema.Attribute.Required;
     url: Schema.Attribute.String & Schema.Attribute.Required;
@@ -78,8 +122,11 @@ declare module '@strapi/strapi' {
   export namespace Public {
     export interface ComponentSchemas {
       'shared.checklist-item': SharedChecklistItem;
+      'shared.faq': SharedFaq;
       'shared.image-text-block': SharedImageTextBlock;
+      'shared.instructor': SharedInstructor;
       'shared.list-item': SharedListItem;
+      'shared.payment-channel': SharedPaymentChannel;
       'shared.rich-text-block': SharedRichTextBlock;
       'shared.social-link': SharedSocialLink;
       'shared.step': SharedStep;

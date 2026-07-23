@@ -32,6 +32,9 @@
       "type": "component",
       "repeatable": true,
       "component": "shared.social-link"
+    },
+    "calendlyUrl": {
+      "type": "string"
     }
   }
 }

@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "payment_info",
+  "info": {
+    "singularName": "payment-info",
+    "pluralName": "payment-infos",
+    "displayName": "Payment Info"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "sectionTitle": {
+      "type": "string",
+      "default": "Fees & Payment Options"
+    },
+    "introNote": {
+      "type": "text"
+    },
+    "registrationFee": {
+      "type": "string"
+    },
+    "tuitionNote": {
+      "type": "text"
+    },
+    "channels": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.payment-channel"
+    },
+    "disclaimer": {
+      "type": "text"
+    }
+  }
+}

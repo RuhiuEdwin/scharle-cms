@@ -36,6 +36,11 @@
     "order": {
       "type": "integer",
       "default": 0
+    },
+    "course": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::course.course"
     }
   }
 }

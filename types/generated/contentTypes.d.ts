@@ -637,11 +637,13 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     duration: Schema.Attribute.String & Schema.Attribute.Required;
+    faqs: Schema.Attribute.Component<'shared.faq', true>;
     featuredOnHome: Schema.Attribute.Boolean &
       Schema.Attribute.DefaultTo<false>;
+    fee: Schema.Attribute.String;
     heroImage: Schema.Attribute.Media<'images'>;
-    heroVideo: Schema.Attribute.Media<'videos'>;
-    intakeMonths: Schema.Attribute.Enumeration<['January', 'May', 'September']>;
+    instructors: Schema.Attribute.Component<'shared.instructor', true>;
+    intakeMonths: Schema.Attribute.Component<'shared.list-item', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -705,6 +707,7 @@ export interface ApiGalleryItemGalleryItem extends Struct.CollectionTypeSchema {
     caption: Schema.Attribute.String;
     category: Schema.Attribute.Enumeration<['Studio', 'Students']> &
       Schema.Attribute.Required;
+    course: Schema.Attribute.Relation<'manyToOne', 'api::course.course'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -770,7 +773,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     heroEyebrow: Schema.Attribute.String;
     heroHeadline: Schema.Attribute.String & Schema.Attribute.Required;
-    heroMedia: Schema.Attribute.Media<'images' | 'videos', true>;
+    heroMedia: Schema.Attribute.Media<'images', true>;
     heroSubcopy: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -781,6 +784,40 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     seoDescription: Schema.Attribute.Text;
     seoTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPaymentInfoPaymentInfo extends Struct.SingleTypeSchema {
+  collectionName: 'payment_info';
+  info: {
+    displayName: 'Payment Info';
+    pluralName: 'payment-infos';
+    singularName: 'payment-info';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    channels: Schema.Attribute.Component<'shared.payment-channel', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    disclaimer: Schema.Attribute.Text;
+    introNote: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::payment-info.payment-info'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    registrationFee: Schema.Attribute.String;
+    sectionTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Fees & Payment Options'>;
+    tuitionNote: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -800,6 +837,7 @@ export interface ApiSiteSettingSiteSetting extends Struct.SingleTypeSchema {
   attributes: {
     address: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Outspan Plaza, Nyeri Town'>;
+    calendlyUrl: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -837,6 +875,7 @@ export interface ApiStudentLifeHighlightStudentLifeHighlight
   attributes: {
     attribution: Schema.Attribute.String;
     caption: Schema.Attribute.String;
+    course: Schema.Attribute.Relation<'manyToOne', 'api::course.course'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1409,6 +1448,7 @@ declare module '@strapi/strapi' {
       'api::gallery-item.gallery-item': ApiGalleryItemGalleryItem;
       'api::gallery-page.gallery-page': ApiGalleryPageGalleryPage;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::payment-info.payment-info': ApiPaymentInfoPaymentInfo;
       'api::site-setting.site-setting': ApiSiteSettingSiteSetting;
       'api::student-life-highlight.student-life-highlight': ApiStudentLifeHighlightStudentLifeHighlight;
       'api::why-scharle-highlight.why-scharle-highlight': ApiWhyScharleHighlightWhyScharleHighlight;

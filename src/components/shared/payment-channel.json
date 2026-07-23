@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_payment_channels",
+  "info": {
+    "displayName": "Payment Channel",
+    "icon": "money"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "lines": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.list-item"
+    }
+  }
+}
