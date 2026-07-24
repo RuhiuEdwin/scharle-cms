@@ -43,6 +43,7 @@ export interface SharedInstructor extends Struct.ComponentSchema {
     icon: 'user';
   };
   attributes: {
+    image: Schema.Attribute.Media<'images'>;
     name: Schema.Attribute.String & Schema.Attribute.Required;
     role: Schema.Attribute.String & Schema.Attribute.Required;
   };

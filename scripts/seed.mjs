@@ -200,7 +200,7 @@ async function main() {
       heroImage: img.hairdressing,
       featuredOnHome: true,
       order: 1,
-      instructors: [{ name: "Grace Mwangi", role: "Lead Hairdressing Instructor" }],
+      instructors: [{ name: "Grace Mwangi", role: "Lead Hairdressing Instructor", image: img.hairdressing }],
       faqs: [
         { question: "Do I need prior experience?", answer: "No — this course starts from the fundamentals and builds up to advanced technique." },
         { question: "Do I get certified?", answer: "Yes, you receive a Scharle Beauty College certificate on successful completion." },
@@ -218,7 +218,7 @@ async function main() {
       heroImage: img.beautyTherapy,
       featuredOnHome: false,
       order: 2,
-      instructors: [{ name: "Faith Wanjiru", role: "Beauty Therapy Instructor" }],
+      instructors: [{ name: "Faith Wanjiru", role: "Beauty Therapy Instructor", image: img.beautyTherapy }],
       faqs: [
         { question: "Is this course physically demanding?", answer: "It involves standing and hands-on practice, but no more than a typical spa/salon shift." },
         { question: "What equipment do I need?", answer: "Core tools are provided in the studio; a personal kit list is shared at enrollment." },
@@ -235,7 +235,7 @@ async function main() {
       heroImage: img.cosmetology,
       featuredOnHome: false,
       order: 3,
-      instructors: [{ name: "Esther Njoki", role: "Cosmetology Program Lead" }],
+      instructors: [{ name: "Esther Njoki", role: "Cosmetology Program Lead", image: img.cosmetology }],
       faqs: [
         { question: "Why is this course longer than the others?", answer: "It covers both hair and skin disciplines plus salon management, so it runs a full 9 months." },
         { question: "Can I specialize after graduating?", answer: "Yes — cosmetology graduates often go on to focus on one area (hair, skin, or management) on the job." },
@@ -252,7 +252,7 @@ async function main() {
       heroImage: img.makeup,
       featuredOnHome: true,
       order: 4,
-      instructors: [{ name: "Diana Achieng", role: "Makeup Artistry Instructor" }],
+      instructors: [{ name: "Diana Achieng", role: "Makeup Artistry Instructor", image: img.makeup }],
       faqs: [
         { question: "Do I need to buy my own makeup kit?", answer: "A starter kit list is provided; studio kits are available for practice sessions." },
         { question: "Is this good for freelancing?", answer: "Yes — building a client-ready portfolio and a client book is part of the curriculum." },
@@ -269,7 +269,7 @@ async function main() {
       heroImage: img.nails,
       featuredOnHome: true,
       order: 5,
-      instructors: [{ name: "Purity Kamau", role: "Nail Technology Instructor" }],
+      instructors: [{ name: "Purity Kamau", role: "Nail Technology Instructor", image: img.nails }],
       faqs: [
         { question: "Is this the shortest course?", answer: "Yes, at 3 months it's our fastest path to a client-ready skill set." },
         { question: "Do you teach nail art?", answer: "Yes — gel, acrylic, and nail art technique are all covered." },
@@ -286,7 +286,7 @@ async function main() {
       heroImage: img.barbering,
       featuredOnHome: false,
       order: 6,
-      instructors: [{ name: "Brian Otieno", role: "Lead Barbering Instructor" }],
+      instructors: [{ name: "Brian Otieno", role: "Lead Barbering Instructor", image: img.barbering }],
       faqs: [
         { question: "Do you teach razor work?", answer: "Yes — beard shaping and razor work are part of the core curriculum." },
         { question: "Can I rent a chair after graduating?", answer: "Many graduates go on to barbershop chair-rental or session work — it's one of our listed career outcomes." },
@@ -370,6 +370,22 @@ async function main() {
       attribution: "Purity, Nail Technology",
       courseSlug: "nail-technology",
       order: 8,
+    },
+    {
+      caption: "Hairdressing & Styling",
+      image: img.hairdressing,
+      quote: "I came in only knowing box braids. Now I can do color correction clients travel from Nairobi for.",
+      attribution: "Mercy, Hairdressing & Styling",
+      courseSlug: "hairdressing-styling",
+      order: 9,
+    },
+    {
+      caption: "Cosmetology",
+      image: img.cosmetology,
+      quote: "The salon management module is the reason I run my own place now, not just cut hair in someone else's chair.",
+      attribution: "Kevin, Cosmetology",
+      courseSlug: "cosmetology",
+      order: 10,
     },
   ];
   for (const s of studentLife) {
