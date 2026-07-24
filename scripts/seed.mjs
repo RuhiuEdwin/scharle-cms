@@ -451,6 +451,168 @@ async function main() {
       "All figures and account details above are placeholders pending final confirmation from the college — do not send payment against them yet.",
   });
 
+  console.log("\nSeeding Blog Posts…");
+  const blogPosts = [
+    {
+      title: "5 Hair Color Trends Kenyan Clients Are Asking For in 2026",
+      slug: "hair-color-trends-2026",
+      excerpt:
+        "From copper balayage to glass-hair gloss treatments, here's what's actually booking out chairs this year.",
+      category: "Industry Trends",
+      author: "Grace Mwangi",
+      image: img.hairdressing,
+      body: `Color requests have shifted noticeably over the last two intakes, and if you're training to be a stylist, these are the looks you need to have in your back pocket.
+
+## 1. Copper balayage
+
+Warm copper tones read beautifully on a wide range of natural hair colors and don't require the same level of upkeep as full-head bleach jobs — a big reason clients keep asking for it.
+
+## 2. Glass-hair gloss treatments
+
+A clear or tinted gloss over natural color, finished with a blowout. It's quick, it's affordable, and it photographs incredibly well — which matters when half your clients are booking for a shoot or an event.
+
+## 3. Money-piece highlights
+
+Face-framing highlights without a full foil job. Lower cost, lower maintenance, still dramatic on camera.
+
+## 4. Rich burgundy and wine tones
+
+Especially popular going into the cooler months — a strong option to suggest to clients who want a change without going lighter.
+
+## 5. Natural color correction
+
+More clients are coming in specifically to *fix* a box-dye job gone wrong rather than chase a new trend. Color correction is quietly becoming one of the most requested (and most valuable) skills a stylist can have.
+
+If you're in our Hairdressing & Styling program, all five of these come up in our color modules — bring reference photos to class and we'll work through the technique together.`,
+    },
+    {
+      title: "Open Day Recap: Meet the January Intake",
+      slug: "open-day-recap-january-intake",
+      excerpt:
+        "Photos, numbers, and highlights from our latest studio open day — and why it's the easiest way to decide if Scharle is right for you.",
+      category: "School Life",
+      author: "Scharle Beauty College",
+      image: img.gradShoot,
+      body: `Our studio doors opened to prospective students, parents, and a few curious neighbors from Outspan Plaza last weekend — and it was one of our best-attended open days yet.
+
+Visitors got a full walkthrough of the studio floor, sat in on a live demo from our Cosmetology instructors, and had a chance to ask current students what a normal week actually looks like (the answer: busy, hands-on, and a lot more practical work than a typical classroom).
+
+## What people asked about most
+
+- How soon students start working on real clients (answer: term one, not year two)
+- Whether payment plans are available for tuition
+- What happens after graduation, beyond just the certificate
+
+## Coming up
+
+If you missed this one, our next open day lines up with the January intake — book a visit any time before then and we'll walk you through the studio one-on-one.`,
+    },
+    {
+      title: "How to Actually Build a Client Book Before You Graduate",
+      slug: "build-a-client-book-before-graduating",
+      excerpt:
+        "The habits that separate students who walk out with a full book of clients from those who start from zero.",
+      category: "Tips & Tutorials",
+      author: "Diana Achieng",
+      image: img.makeup,
+      body: `The biggest difference between a graduate who's booked out in month one and one who's still building from scratch usually comes down to habits started *during* training, not after.
+
+## Document everything
+
+Every project you complete in the studio should get shot properly — good lighting, clean background, before/after where relevant. This is the content that becomes your portfolio and your first Instagram posts.
+
+## Ask for reviews early
+
+Even practice clients can leave a review or a testimonial. Ask for it while the experience is fresh, not months later.
+
+## Say yes to the awkward requests
+
+The client who wants something slightly outside your comfort zone is often the one who refers you to three friends afterward. Term one is the time to stretch, not to play it safe.
+
+## Show up consistently online
+
+You don't need a huge following — you need a consistent one. Posting your actual work, even to 200 followers, beats a polished page that never updates.
+
+Students who start doing this from week one of their program are, without exception, the ones who have paying clients lined up before their final assessment.`,
+    },
+    {
+      title: "Why We Still Teach Razor Work in the Barbering Program",
+      slug: "why-we-teach-razor-work",
+      excerpt:
+        "Clippers get the job done fast, but the barbers clients specifically ask for are usually the ones who know their way around a razor.",
+      category: "Industry Trends",
+      author: "Brian Otieno",
+      image: img.barbering,
+      body: `It would be easy to run a shorter barbering curriculum that skips razor work entirely — clippers cover the majority of day-to-day cuts. We don't, and here's why.
+
+A clean razor line-up or a proper straight-razor shave is still one of the clearest signals of a barber's actual skill level, and it's the service clients are most willing to pay a premium for. It's also one of the hardest things to pick up on the job without proper instruction, since the margin for error is a lot smaller than with clippers.
+
+## What this looks like in practice
+
+Every barbering student spends dedicated studio hours on razor technique before they touch a real client with one — starting on practice skin, moving to supervised sessions, and only working solo once an instructor signs off.
+
+Graduates consistently tell us this is the module that gets them noticed fastest once they're in a real shop, chair-renting or otherwise.`,
+    },
+    {
+      title: "From Box Braids to Color Correction: Mercy's Story",
+      slug: "mercy-student-story",
+      excerpt:
+        "One of our Hairdressing & Styling graduates on going from knowing almost nothing to handling clients who travel from Nairobi for her work.",
+      category: "Student Stories",
+      author: "Scharle Beauty College",
+      image: img.hairdressing,
+      body: `When Mercy joined our Hairdressing & Styling program, she'd only ever done box braids on friends and family. Six months later, she's doing color correction work for clients who travel in from Nairobi specifically to see her.
+
+"I didn't think color was something I'd be good at," she says. "I came in only knowing box braids. The color modules were the hardest part of the course for me, honestly — but they were also the part that changed everything once it clicked."
+
+## What made the difference
+
+Mercy points to two things: the amount of real client time built into the course, and instructors who were willing to let students fail safely on practice heads before ever touching a paying client's hair.
+
+She now runs a growing client list out of a rented chair in Nyeri Town, with color correction as her specialty and referral engine.
+
+If you're on the fence about whether a hands-on program is worth it over a shorter, cheaper course elsewhere, Mercy's answer is simple: "The clients notice the difference between a stylist who learned from videos and one who learned on real heads, with someone standing next to them the whole time."`,
+    },
+    {
+      title: "Skincare Myths Our Beauty Therapy Instructors Are Tired Of",
+      slug: "skincare-myths-beauty-therapy",
+      excerpt:
+        "A few things our instructors hear in every single intake — and what's actually true.",
+      category: "Tips & Tutorials",
+      author: "Faith Wanjiru",
+      image: img.beautyTherapy,
+      body: `Every new intake, our Beauty Therapy instructors field the same handful of skincare myths from students and clients alike. Here's the quick version of what's actually true.
+
+## "Oily skin doesn't need moisturizer"
+
+Oily skin still needs hydration — skipping moisturizer often makes oil production worse, not better, as skin tries to compensate.
+
+## "You only need sunscreen when it's sunny"
+
+UV exposure happens on cloudy days too, and it's the single biggest driver of premature aging we see in clients. Daily sunscreen, full stop.
+
+## "Facials should hurt to work"
+
+Extractions can be uncomfortable, but a facial that leaves skin visibly irritated for days afterward is a sign of a technique problem, not a sign it "worked."
+
+## "Natural products are always safer"
+
+Natural ingredients cause just as many allergic reactions as synthetic ones — what matters is a proper patch test and understanding a client's skin, not the ingredient list's marketing.
+
+These are exactly the kinds of misconceptions we spend real studio time correcting, because clients ask their therapist these questions constantly — and knowing the real answer, confidently, is part of the job.`,
+    },
+  ];
+
+  for (const p of blogPosts) {
+    const { image, ...rest } = p;
+    await createEntry("blog-posts", {
+      ...rest,
+      coverImage: image,
+      publishedAt: new Date().toISOString(),
+    });
+    console.log(`✓ blog-post: ${p.title}`);
+  }
+
   console.log("\n✅ Seed complete.");
 }
 
