@@ -732,6 +732,47 @@ export interface ApiCoursesPageCoursesPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiEnrollmentApplicationEnrollmentApplication
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'enrollment_applications';
+  info: {
+    displayName: 'Enrollment Application';
+    pluralName: 'enrollment-applications';
+    singularName: 'enrollment-application';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    courseInterest: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::course.course'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    documents: Schema.Attribute.Media<'images' | 'files', true>;
+    email: Schema.Attribute.Email & Schema.Attribute.Required;
+    fullName: Schema.Attribute.String & Schema.Attribute.Required;
+    honeypot: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::enrollment-application.enrollment-application'
+    > &
+      Schema.Attribute.Private;
+    notes: Schema.Attribute.Text;
+    phone: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    status: Schema.Attribute.Enumeration<['new', 'reviewed', 'contacted']> &
+      Schema.Attribute.DefaultTo<'new'>;
+    submittedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGalleryItemGalleryItem extends Struct.CollectionTypeSchema {
   collectionName: 'gallery_items';
   info: {
@@ -1485,6 +1526,7 @@ declare module '@strapi/strapi' {
       'api::contact-submission.contact-submission': ApiContactSubmissionContactSubmission;
       'api::course.course': ApiCourseCourse;
       'api::courses-page.courses-page': ApiCoursesPageCoursesPage;
+      'api::enrollment-application.enrollment-application': ApiEnrollmentApplicationEnrollmentApplication;
       'api::gallery-item.gallery-item': ApiGalleryItemGalleryItem;
       'api::gallery-page.gallery-page': ApiGalleryPageGalleryPage;
       'api::home-page.home-page': ApiHomePageHomePage;

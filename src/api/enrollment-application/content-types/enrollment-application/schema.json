@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "enrollment_applications",
+  "info": {
+    "singularName": "enrollment-application",
+    "pluralName": "enrollment-applications",
+    "displayName": "Enrollment Application"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "fullName": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "courseInterest": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::course.course"
+    },
+    "documents": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "notes": {
+      "type": "text"
+    },
+    "honeypot": {
+      "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "new",
+        "reviewed",
+        "contacted"
+      ],
+      "default": "new"
+    },
+    "submittedAt": {
+      "type": "datetime"
+    }
+  }
+}
