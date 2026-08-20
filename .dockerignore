@@ -1,0 +1,12 @@
+node_modules
+.tmp
+.strapi
+dist
+build
+.env
+.env.*
+*.sqlite
+*.sqlite3
+.git
+.DS_Store
+npm-debug.log
